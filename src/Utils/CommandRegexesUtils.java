@@ -32,7 +32,7 @@ public class CommandRegexesUtils {
     }
 
     public static boolean readAndSortRegex(String command) {
-        Pattern readAndSortPattern = Pattern.compile("^READ ALL;SORT=.*, DESC$");
+        Pattern readAndSortPattern = Pattern.compile("^READ ALL;SORT=.*,DESC$");
         Matcher readAndSortMatcher = readAndSortPattern.matcher(command);
         return readAndSortMatcher.find();
     }
