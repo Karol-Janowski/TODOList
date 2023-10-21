@@ -31,6 +31,12 @@ public class CommandRegexesUtils {
         return readAllMatcher.find();
     }
 
+    public static boolean readAndSortRegex(String command) {
+        Pattern readAndSortPattern = Pattern.compile("^READ ALL;SORT=.*, DESC$");
+        Matcher readAndSortMatcher = readAndSortPattern.matcher(command);
+        return readAndSortMatcher.find();
+    }
+
     public static boolean deleteByNameRegex(String command) {
         Pattern deletePattern = Pattern.compile("^DELETE;NAME=.*$");
         Matcher deleteMatcher = deletePattern.matcher(command);
