@@ -6,7 +6,7 @@ public class DataBaseUtils {
 
     static private String dataBaseURL = "jdbc:postgresql://localhost:5432/todolist";
     static private String username = "postgres";
-    static private String password = "Kociemba1";
+    static private String password = "20231021kj";
 
     public static boolean checkDBExists(String dbName) {
 
