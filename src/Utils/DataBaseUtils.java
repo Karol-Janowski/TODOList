@@ -119,6 +119,30 @@ public class DataBaseUtils {
 
     }
 
+    public static void readAllAndSort(String orderBy) {
+        String query = "SELECT * FROM TODOLIST ORDER BY ? DESC";
+
+        try (
+                Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
+                PreparedStatement statement = connection.prepareStatement(query);
+                ) {
+                statement.setString(1, orderBy);
+                ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                System.out.print(resultSet.getString(1) + ", ");
+                System.out.print(resultSet.getString(2) + ", ");
+                System.out.print(resultSet.getString(3) + ", ");
+                System.out.print(resultSet.getString(4));
+                System.out.println();
+            }
+
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void readByNameFromDataBase(String name) {
         String query = "SELECT * FROM TODOLIST WHERE NAME = ?;";
 
