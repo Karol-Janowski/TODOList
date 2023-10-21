@@ -17,7 +17,7 @@ public class Main {
 
         boolean programStarter = true;
         Scanner scanner = new Scanner(System.in);
-        String command = "";
+        String command;
 
         while (programStarter) {
             System.out.print("todoList->:");
