@@ -12,9 +12,10 @@ public class PrintingUtils {
         System.out.println("1. CREATE;NAME=task_name;DESCRIPTION=your_description;DEADLINE=yyyy-mm-dd hh:mm:ss;PRIORITY=0-10");
         System.out.println("2. UPDATE;NAME=task_name;DESCRIPTION=your_description;DEADLINE=yyyy-mm-dd hh:mm:ss;PRIORITY=0-10");
         System.out.println("3. READ;NAME=task_name");
-        System.out.println("4. READ ALL;");
-        System.out.println("5. DELETE;NAME=task_name");
-        System.out.println("6. EXIT");
+        System.out.println("4. READ ALL;SORT=PRIORITY,DESC");
+        System.out.println("5. READ ALL;");
+        System.out.println("6. DELETE;NAME=task_name");
+        System.out.println("7. EXIT");
         System.out.println();
     }
 
