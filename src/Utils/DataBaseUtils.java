@@ -119,8 +119,8 @@ public class DataBaseUtils {
 
     }
 
-    public static void readAllAndSort(String orderBy) {
-        String query = "SELECT * FROM TODOLIST ORDER BY ? DESC";
+    public static void readAllFromDataBaseAndSort(String orderBy) {
+        String query = "SELECT * FROM TODOLIST ORDER BY ? DESC;";
 
         try (
                 Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
