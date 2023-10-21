@@ -35,6 +35,7 @@ public class getDataFromCommandUtils {
         List<String> split = Arrays.stream(command.split(";"))
                 .filter(e -> e.contains("="))
                 .map(e -> e.replaceAll(".*=", ""))
+                .map(e -> e.replaceAll(",.*", ""))
                 .collect(Collectors.toList());
 
         String sortBy = split.get(0);

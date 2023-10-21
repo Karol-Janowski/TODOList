@@ -43,7 +43,7 @@ public class Main {
             } else if (deleteByNameRegex(command)) {
                 getDataFromCommandAndDeleteFromDB(command);
             } else if (readAndSortRegex(command)) {
-                readAllFromDataBaseAndSort(command);
+                getDataFromCommandAndPrintSorted(command);
             } else {
                 enterProperCommand();
             }

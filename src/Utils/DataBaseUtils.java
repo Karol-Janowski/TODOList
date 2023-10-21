@@ -120,13 +120,12 @@ public class DataBaseUtils {
     }
 
     public static void readAllFromDataBaseAndSort(String orderBy) {
-        String query = "SELECT * FROM TODOLIST ORDER BY ? DESC;";
+        String query = "SELECT * FROM TODOLIST ORDER BY " + orderBy + " DESC;";
 
         try (
                 Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
-                PreparedStatement statement = connection.prepareStatement(query);
+                PreparedStatement statement = connection.prepareStatement(query)
                 ) {
-                statement.setString(1, orderBy);
                 ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
