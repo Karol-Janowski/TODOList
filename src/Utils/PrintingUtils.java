@@ -14,8 +14,9 @@ public class PrintingUtils {
         System.out.println("3. READ;NAME=task_name");
         System.out.println("4. READ ALL;SORT=PRIORITY,DESC");
         System.out.println("5. READ ALL;");
-        System.out.println("6. DELETE;NAME=task_name");
-        System.out.println("7. EXIT");
+        System.out.println("6. READ GROUPED;");
+        System.out.println("7. DELETE;NAME=task_name");
+        System.out.println("8. EXIT");
         System.out.println();
     }
 
@@ -26,8 +27,9 @@ public class PrintingUtils {
         System.out.println("3. READ;NAME=task_name");
         System.out.println("4. READ ALL;SORT=PRIORITY,DESC");
         System.out.println("5. READ ALL;");
-        System.out.println("6. DELETE;NAME=task_name");
-        System.out.println("7. EXIT");
+        System.out.println("6. READ GROUPED;");
+        System.out.println("7. DELETE;NAME=task_name");
+        System.out.println("8. EXIT");
         System.out.println();
     }
 }
