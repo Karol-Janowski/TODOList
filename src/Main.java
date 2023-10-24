@@ -44,6 +44,8 @@ public class Main {
                 getDataFromCommandAndDeleteFromDB(command);
             } else if (readAndSortRegex(command)) {
                 getDataFromCommandAndPrintSorted(command);
+            } else if (groupedByRegex(command)){
+                printGroupedByDateDatafromDB();
             } else {
                 enterProperCommand();
             }

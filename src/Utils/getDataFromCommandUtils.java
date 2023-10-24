@@ -70,4 +70,8 @@ public class getDataFromCommandUtils {
 
         updateDataBase(name, description, Timestamp.valueOf(timestap), priority);
     }
+
+    public static void printGroupedByDateDatafromDB() {
+        readGroupedByFromDB();
+    }
 }

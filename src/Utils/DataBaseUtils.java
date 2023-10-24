@@ -125,8 +125,8 @@ public class DataBaseUtils {
         try (
                 Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
                 PreparedStatement statement = connection.prepareStatement(query)
-                ) {
-                ResultSet resultSet = statement.executeQuery();
+        ) {
+            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 System.out.print(resultSet.getString(1) + ", ");
@@ -181,6 +181,27 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(3) + ", ");
                 System.out.print(resultSet.getString(4));
                 System.out.println();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void readGroupedByFromDB() {
+        String query = "SELECT NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY FROM TODOLIST GROUP BY NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY ORDER BY DATE(DEADLINE)";
+
+        try (
+                Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
+                PreparedStatement statement = connection.prepareStatement(query);
+                ResultSet resultSet = statement.executeQuery();
+        ) {
+            while (resultSet.next()) {
+                System.out.print(resultSet.getString(1) + ", ");
+                System.out.print(resultSet.getString(2) + ", ");
+                System.out.print(resultSet.getString(3) + ", ");
+                System.out.print(resultSet.getString(4));
+                System.out.println();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
