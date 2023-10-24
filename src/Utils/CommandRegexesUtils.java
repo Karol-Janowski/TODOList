@@ -37,6 +37,12 @@ public class CommandRegexesUtils {
         return readAndSortMatcher.find();
     }
 
+    public static boolean groupedByRegex(String command) {
+        Pattern groupedByPattern = Pattern.compile("^READ GROUPED;$");
+        Matcher groupedByMatcher = groupedByPattern.matcher(command);
+        return groupedByMatcher.find();
+    }
+
     public static boolean deleteByNameRegex(String command) {
         Pattern deletePattern = Pattern.compile("^DELETE;NAME=.*$");
         Matcher deleteMatcher = deletePattern.matcher(command);
