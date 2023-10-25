@@ -46,6 +46,9 @@ public class Main {
                 getDataFromCommandAndPrintSorted(command);
             } else if (groupedByRegex(command)){
                 printGroupedByDateDatafromDB();
+            } else if (completedStatusRegex(command)){
+                getDataFromCommandAndChangeStatusToCompleted(command);
+                getDataFromCommandAndPrintByName(command);
             } else {
                 enterProperCommand();
             }
