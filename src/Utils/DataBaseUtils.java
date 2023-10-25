@@ -37,6 +37,7 @@ public class DataBaseUtils {
                 "DESCRIPTION TEXT," +
                 "DEADLINE TIMESTAMP WITH TIME ZONE NOT NULL," +
                 "PRIORITY INT CHECK (PRIORITY IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) NOT NULL," +
+                "STATUS STATUS DEFAULT 'TODO' NOT NULL " +
                 "UNIQUE (NAME)" +
                 ")";
 
@@ -132,7 +133,8 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(1) + ", ");
                 System.out.print(resultSet.getString(2) + ", ");
                 System.out.print(resultSet.getString(3) + ", ");
-                System.out.print(resultSet.getString(4));
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
                 System.out.println();
             }
 
@@ -156,7 +158,8 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(1) + ", ");
                 System.out.print(resultSet.getString(2) + ", ");
                 System.out.print(resultSet.getString(3) + ", ");
-                System.out.print(resultSet.getString(4));
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
                 System.out.println();
             }
 
@@ -179,7 +182,8 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(1) + ", ");
                 System.out.print(resultSet.getString(2) + ", ");
                 System.out.print(resultSet.getString(3) + ", ");
-                System.out.print(resultSet.getString(4));
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
                 System.out.println();
             }
         } catch (SQLException e) {
@@ -188,7 +192,9 @@ public class DataBaseUtils {
     }
 
     public static void readGroupedByFromDB() {
-        String query = "SELECT NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY FROM TODOLIST GROUP BY NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY ORDER BY DATE(DEADLINE)";
+        String query = "SELECT NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY FROM TODOLIST " +
+                "GROUP BY NAME, DESCRIPTION, DATE(DEADLINE), PRIORITY " +
+                "ORDER BY DATE(DEADLINE)";
 
         try (
                 Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
@@ -199,7 +205,8 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(1) + ", ");
                 System.out.print(resultSet.getString(2) + ", ");
                 System.out.print(resultSet.getString(3) + ", ");
-                System.out.print(resultSet.getString(4));
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
                 System.out.println();
 
             }
@@ -229,7 +236,8 @@ public class DataBaseUtils {
                 System.out.print(resultSet.getString(1) + ", ");
                 System.out.print(resultSet.getString(2) + ", ");
                 System.out.print(resultSet.getString(3) + ", ");
-                System.out.print(resultSet.getString(4));
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
                 System.out.println();
             }
 
