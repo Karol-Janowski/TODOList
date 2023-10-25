@@ -215,6 +215,27 @@ public class DataBaseUtils {
         }
     }
 
+    public static void changeStatusToCompleted(String name) {
+        String query = "UPDATE TODOLIST SET STATUS = 'COMPLETED' WHERE NAME='" + name + "';";
+
+        try (
+                Connection connection = DriverManager.getConnection(dataBaseURL, username, password);
+                PreparedStatement statement = connection.prepareStatement(query);
+                ResultSet resultSet = statement.executeQuery();
+        ) {
+            while (resultSet.next()) {
+                System.out.print(resultSet.getString(1) + ", ");
+                System.out.print(resultSet.getString(2) + ", ");
+                System.out.print(resultSet.getString(3) + ", ");
+                System.out.print(resultSet.getString(4) + ", ");
+                System.out.print(resultSet.getString(5));
+                System.out.println();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void deleteByNameFromDataBase(String name) {
 
         String fetchQuery = "SELECT * FROM TODOLIST WHERE NAME = ?";
