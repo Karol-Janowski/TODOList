@@ -71,6 +71,17 @@ public class getDataFromCommandUtils {
         updateDataBase(name, description, Timestamp.valueOf(timestap), priority);
     }
 
+    public static void getDataFromCommandAndChangeStatusToCompleted(String command) {
+        List<String> split = Arrays.stream(command.split(";"))
+                .filter(e -> e.contains("="))
+                .map(e -> e.replaceAll(".*=", ""))
+                .collect(Collectors.toList());
+
+        String name = split.get(0);
+
+        changeStatusToCompleted(name);
+    }
+
     public static void printGroupedByDateDatafromDB() {
         readGroupedByFromDB();
     }
