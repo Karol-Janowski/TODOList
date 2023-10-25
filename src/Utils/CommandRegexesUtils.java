@@ -43,6 +43,12 @@ public class CommandRegexesUtils {
         return groupedByMatcher.find();
     }
 
+    public static boolean completedStatusRegex(String command) {
+        Pattern completedPattern = Pattern.compile("^COMPLETED;NAME=.*$");
+        Matcher completedMatcher = completedPattern.matcher(command);
+        return completedMatcher.find();
+    }
+
     public static boolean deleteByNameRegex(String command) {
         Pattern deletePattern = Pattern.compile("^DELETE;NAME=.*$");
         Matcher deleteMatcher = deletePattern.matcher(command);
